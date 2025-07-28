@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+  labels:
+    env: test
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    imagePullPolicy: IfNotPresent
+  tolerations:
+  - key: "gpa"
+    operator: "Equal"
+    value: "true"
+    effect: "NoSchedule"
+
+
+## kubectl taint node cluster3-worker2 gpa=true:NoSchedule
