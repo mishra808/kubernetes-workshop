@@ -30,17 +30,17 @@ kubectl run pod ngix-pod --image=nginx:latest --port 80
 kubectl explain pod
 ```
 
-### create pod in declarative 
+### Create pod in declarative 
 ```bash
 kubectl create -f simple-pod.yaml
 ```
 
-### edit pod
+### Edit pod
 ```bash
 kubectl edit pod nginx-pod
 ```
 
-### describe pod to check images
+### Describe pod to check images
 ```bash
 kubectl describe pod nginx-pod
 ```
@@ -56,7 +56,7 @@ kubectl exec -it nginx-pod -- sh
 kubectl run nginx-pod2 --image=nginx --dry-run=client -o yaml  > simple-pod2.yaml
 ```
 
-### more information of all pds
+### More information of all pds
 
 ```bash
 kubectl get pods -o wide
@@ -64,7 +64,7 @@ kubectl get pods -o wide
 
 # Replication controller
 
-### get RC
+### Get RC
 ```bash
 kubectl get rc
 ```
@@ -81,7 +81,7 @@ kubectl scale --replicas=10 rs/nginx-rs
 
 # Deployment
 
-### change image version of all deployment
+### Change image version of all deployment
 ```bash
 kubectl set image deploy/nginx-deploy \
 nginx-pod=1.28.0
@@ -133,14 +133,14 @@ kubectl create deploy nginx-demo --image=nginx -n demo
  kubectl expose deploy/nginx-demo --name=svc-demo --port=81 -n=demo
  ```
 
-## check logs
+## Check logs
 ```bash
 kubectl logs pod/nginx-pod
 ```
 
 Pod, deployments, replicasets, namespace, K8s architecture and its components, stateful sets, taint and toleration, service account, RBAC, services,
 
-### get objects from all namespaces 
+### Get objects from all namespaces 
 ```bash
 kubectl get ds -A
 ```
