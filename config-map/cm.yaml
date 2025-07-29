@@ -1,0 +1,7 @@
+apiVersion: v1
+data:
+  firstname: rahul
+  lastname: mishra
+kind: ConfigMap
+metadata:
+  name: app-cm
